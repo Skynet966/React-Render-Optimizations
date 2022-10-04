@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { renderLogs } from '../../utils/renderLogs';
 
-export const UseState = () => {
+export const UseStateTwo = () => {
 	const [count, setCount] = useState(0);
-	renderLogs('UseState');
+	renderLogs('UseStateTwo');
 	return (
 		<div className='container'>
 			<div className='container__header'>
@@ -18,10 +18,10 @@ export const UseState = () => {
 				<div className='button__container'>
 					<button
 						onClick={() => {
-							setCount(countValue => countValue - 1);
+							setCount(countValue => 0);
 						}}
 					>
-						Decrement
+						Set value as 0
 					</button>
 					<button
 						onClick={() => {
@@ -29,6 +29,13 @@ export const UseState = () => {
 						}}
 					>
 						Increment
+					</button>
+					<button
+						onClick={() => {
+							setCount(countValue => 5);
+						}}
+					>
+						Set value as 5
 					</button>
 				</div>
 			</div>

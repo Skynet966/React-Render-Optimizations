@@ -1,14 +1,15 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
 import './App.css';
-import { UseState } from './components/UseState/UseState';
+import { UseStateOne } from './components/UseStateOne/UseStateOne';
+import { UseStateTwo } from './components/UseStateTwo/UseStateTwo';
 
 function App() {
 	const [count, setCount] = useState(0);
 
 	return (
 		<div className='App'>
-			<UseState />
+			<UseStateOne />
+			<UseStateTwo />
 		</div>
 	);
 }
