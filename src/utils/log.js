@@ -4,7 +4,7 @@ export const log = (message, color) => {
 			color = 'Green';
 			break;
 		case 'info':
-			color = 'Blue';
+			color = 'aliceblue';
 			break;
 		case 'error':
 			color = 'Red';
@@ -17,7 +17,7 @@ export const log = (message, color) => {
 	}
 
 	console.log(
-		`%c----${message}----`,
+		`%c[React Rendering]-${message}`,
 		`color:${color};font-size:16px;font-weight:700;text-transform:capitalize;`
 	);
 };

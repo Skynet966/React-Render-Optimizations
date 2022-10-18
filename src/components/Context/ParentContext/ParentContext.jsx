@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { renderLogs } from '../../utils/renderLogs';
+import { renderLogs } from '../../../utils/renderLogs';
 
-export const UseStateOne = () => {
+export const CountContext = React.createContext();
+const CountProvider = CountContext.Provider;
+
+const ParentContext = ({ children }) => {
 	const [count, setCount] = useState(0);
-	renderLogs('UseStateOne');
+	renderLogs('ParentContext');
 	return (
 		<div className='container'>
 			<div className='container__header'>
@@ -32,6 +35,9 @@ export const UseStateOne = () => {
 					</button>
 				</div>
 			</div>
+			<CountProvider value={count}>{children}</CountProvider>
 		</div>
 	);
 };
+
+export default ParentContext;

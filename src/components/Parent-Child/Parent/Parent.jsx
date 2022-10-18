@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { renderLogs } from '../../utils/renderLogs';
+import { renderLogs } from '../../../utils/renderLogs';
+import { Child } from '../Child/Child';
 
-export const UseStateTwo = () => {
+const Parent = () => {
 	const [count, setCount] = useState(0);
-	renderLogs('UseStateTwo');
+	renderLogs('Parent Component');
 	return (
 		<div className='container'>
 			<div className='container__header'>
@@ -39,6 +40,9 @@ export const UseStateTwo = () => {
 					</button>
 				</div>
 			</div>
+			<Child />
 		</div>
 	);
 };
+
+export default Parent;

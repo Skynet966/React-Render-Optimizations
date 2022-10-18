@@ -15,7 +15,7 @@ const reducer = (state, action) => {
 	}
 };
 
-export const UseReducer = () => {
+const UseReducer = () => {
 	const [count, dispatch] = useReducer(reducer, initialState);
 
 	renderLogs('UseReducer');
@@ -27,7 +27,8 @@ export const UseReducer = () => {
 			</div>
 			<div className='container__body'>
 				<p>
-					Increment and Decrement and reset counter to see the render state in console.
+					Increment and Decrement and reset counter to see the render state in
+					console.
 				</p>
 			</div>
 			<div className='container__footer'>
@@ -40,3 +41,5 @@ export const UseReducer = () => {
 		</div>
 	);
 };
+
+export default UseReducer;
