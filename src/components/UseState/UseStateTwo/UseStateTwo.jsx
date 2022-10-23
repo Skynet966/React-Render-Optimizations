@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
 import { PlusCircleIcon } from '@heroicons/react/24/solid';
+import React, { useState } from 'react';
+import genrateRandomColor from '../../../utils/genrateRandomColor';
 import { renderLogs } from '../../../utils/renderLogs';
+const color = genrateRandomColor();
 let renderCount = 0;
-
 const UseStateTwo = () => {
 	const [count, setCount] = useState(0);
 
@@ -11,7 +12,7 @@ const UseStateTwo = () => {
 		setCount(previousCount => callback(previousCount));
 	};
 	renderCount++;
-	renderLogs(UseStateTwo.name, renderCount);
+	renderLogs(UseStateTwo.name, renderCount, color);
 	return (
 		<div className='mx-auto p-4 max-w-screen-sm text-center bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700'>
 			<h5 className='mb-2 text-3xl font-bold text-gray-900 dark:text-white'>

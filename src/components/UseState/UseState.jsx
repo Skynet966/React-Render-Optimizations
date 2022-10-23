@@ -1,26 +1,22 @@
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import UseState from './components/UseState/UseState';
-import UseStateOne from './components/UseState/UseStateOne/UseStateOne';
-import UseStateTwo from './components/UseState/UseStateTwo/UseStateTwo';
+import UseStateOne from './UseStateOne/UseStateOne';
+import UseStateTwo from './UseStateTwo/UseStateTwo';
 
 const navigation = [
-	{ name: 'Use-State', current: true },
-	{ name: 'Use-Reducer', current: false },
-	{ name: 'Parent-Children', current: false },
-	{ name: 'Immutable-State', current: false },
-	{ name: 'Context', current: false },
+	{ name: 'Use-State One', current: true },
+	{ name: 'Use-State Two', current: false },
 ];
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ');
 }
 
-export default function App() {
+const UseState = () => {
 	return (
 		<>
 			<div className='min-h-full'>
-				<Disclosure as='nav' className='bg-gray-800'>
+				<Disclosure as='nav' className='bg-gray-700'>
 					{({ open }) => (
 						<>
 							<div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
@@ -31,6 +27,7 @@ export default function App() {
 												{navigation.map(item => (
 													<button
 														key={item.name}
+														href={item.href}
 														className={classNames(
 															item.current
 																? 'bg-gray-900 text-white'
@@ -70,6 +67,8 @@ export default function App() {
 									{navigation.map(item => (
 										<Disclosure.Button
 											key={item.name}
+											as='a'
+											href={item.href}
 											className={classNames(
 												item.current
 													? 'bg-gray-900 text-white'
@@ -86,10 +85,22 @@ export default function App() {
 						</>
 					)}
 				</Disclosure>
+
+				<header className='bg-white shadow'>
+					<div className='mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8'>
+						<h1 className='text-3xl font-bold tracking-tight text-gray-900'>
+							{`${UseStateOne.name} Rendering`}
+						</h1>
+					</div>
+				</header>
 				<main>
-					<UseState />
+					<div className='mx-auto max-w-7xl py-6 sm:px-6 lg:px-8'>
+						{/* <UseStateOne /> */}
+						<UseStateTwo />
+					</div>
 				</main>
 			</div>
 		</>
 	);
-}
+};
+export default UseState;
